@@ -1,0 +1,75 @@
+<?php
+require 'dbconfig/config.php';
+?>
+
+<?php
+// Start the session
+session_start();
+if (isset($_SESSION['user_id']))
+  { echo $_SESSION['user_id'];  }
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fitlife.com</title>
+<link rel="stylesheet" href="css/weight.css">>
+    </head>
+<body>
+  <form class="modal-content animate" action="" method='POST'>
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="user"><b>Weight</b></label>
+      <input type="text" placeholder="Enter Weight In Kg" name="user" id="v2" style="width:155px"  required>
+      <br>
+      <label for="pass"><b>In Days</b></label>
+      <input type="text" placeholder="Enter No Of Days" name="pass" id="v1" style="width:172px" required>
+      <br>
+      <p><strong>Goal</strong></p>
+       <select id="ddlViewBy1" name="hw">
+       <option value="one" selected="selected">Wheight Loss</option>
+       <option value="two">Weight Gain</option>
+       </select>
+       <input type="button" name="Sumbit" value="Calc" onclick="javascript:addNum2()"/>
+       <br>
+       Calories Loss <input type="text" id="answr" name="answr" value="" style="width:150px"/><br>
+       Total Calories Earn per day  <input type="text" id="stats" name="stats" value="" style="width:150px" /><br>
+       every days exercises <br>
+       <input type="text" id="stats1" name="stats1" value="" style="width:120px" />
+       <input type="text" id="stats2" name="stats2" value="" style="width:120px" />
+       <input type="text" id="stats3" name="stats3" value="" style="width:120px"/>
+       <input type="text" id="stats4" name="stats4" value="" style="width:120px"/>
+       <input type="text" id="stats5" name="stats5" value="" style="width:120px"/>
+       <input type="text" id="stats6" name="stats6" value="" style="width:120px"/>
+
+
+    </div>
+        <div class="container" style="background-color: #f1f1f1 ">
+      <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+  <script language="javascript" src="js/calculate.js">
+
+        </script>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
